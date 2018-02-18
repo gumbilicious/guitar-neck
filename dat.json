@@ -1,0 +1,182 @@
+//array
+noteList = ["A", "A#/Bb", "B", "C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A"];
+
+//array of objects with embedded arrays
+tunings = 
+[
+	{
+	"name" : "Standard",
+	"notes":["E", "A", "D", "G", "B", "E", "none", "none", "none", "none", "none", "none"]
+	},
+	{
+	"name" : "Drop D",
+	"notes":["D", "A", "D", "G", "B", "E", "none", "none", "none", "none", "none", "none"]
+	},
+	{
+	"name" : "Half Step Down",
+	"notes":["D#/Eb", "G#/Ab", "C#/Db", "F#/Gb", "A#/Bb", "D#/Eb", "none", "none", "none", "none", "none", "none"]
+	},
+	{
+	"name" : "Whole Step Down",
+	"notes":["D", "G", "C", "F", "A", "D", "none", "none", "none", "none", "none", "none"]
+	},
+	{
+	"name" : "Open G",
+	"notes":["D", "G", "D", "G", "B", "D", "none", "none", "none", "none", "none", "none"]
+	},	
+	{
+	"name" : "Open D",
+	"notes":["D", "A", "D", "F#/Gb", "A", "D", "none", "none", "none", "none", "none", "none"]
+	},
+	{
+	"name" : "Open C6",
+	"notes":["C", "E", "G", "A", "C", "E", "none", "none", "none", "none", "none", "none"]
+	},
+	{
+	"name" : "7 String Std",
+	"notes":["B", "E", "A", "D", "G", "B", "E", "none", "none", "none", "none", "none"]
+	},
+	{
+	"name" : "Baritone Guitar",
+	"notes":["B", "E", "A", "D", "F#/Gb", "B", "none", "none", "none", "none", "none", "none"]
+	},
+	{
+	"name" : "Mandolin/Tenor Banjo",
+	"notes":["G", "D", "A", "E", "none", "none", "none", "none", "none", "none", "none", "none"]
+	},
+	{
+	"name" : "5 string Banjo",
+	"notes":["G", "D", "G", "B", "D", "none", "none", "none", "none", "none", "none", "none"]
+	},
+	{
+	"name" : "Ukelele",
+	"notes":["G", "C", "E", "A", "none", "none", "none", "none", "none", "none", "none", "none"]
+	},
+	{
+	"name" : "Bass",
+	"notes":["E", "A", "D", "G", "none", "none", "none", "none", "none", "none", "none", "none"]
+	},
+];
+
+//array of scale objects
+scales =
+[
+	{
+	"name" : "-",
+	"active" : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	"colors" : ["White", "White", "White", "White", "White", "White", "White", "White", "White", "White", "White", "White"]
+	},
+	{
+	"name" : "Major",
+	"active" : [1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
+	"colors" : ["Black", "White", "Red", "White", "Orange", "Yellow", "White", "Green", "White", "Blue", "White", "Purple"]
+	},
+	{
+	"name" : "Minor",
+	"active" : [1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0],
+	"colors" : ["Black", "White", "Red", "Orange", "White", "Yellow", "White", "Green", "Blue", "White", "Purple", "White"]
+	},
+	{
+	"name" : "Minor Pentatonic",
+	"active" : [1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0],
+	"colors" : ["Black", "White", "Red", "Orange", "White", "Yellow", "White", "Green", "Blue", "White", "Purple", "White"]
+	},
+	{
+	"name" : "Harmonic Minor",
+	"active" : [1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1],
+	"colors" : ["Black", "White", "Red", "Orange", "White", "Yellow", "White", "Green", "Blue", "White", "White", "Purple"]
+	},
+	{
+	"name" : "Whole Tone",
+	"active" : [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
+	"colors" : ["Black", "White", "Red", "White", "Orange", "White", "Green", "White", "Blue", "White", "Purple", "White"]
+	},
+	{
+	"name" : "Diminished Interval",
+	"active" : [1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0],
+	"colors" : ["Black", "White", "White", "Red", "White", "White", "Green", "White", "White", "Blue", "White", "White"]
+	},
+	{
+	"name" : "Diminished Scale",
+	"active" : [1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1],
+	"colors" : ["Black", "White", "Red", "Orange", "White", "Green", "Yellow", "White", "Blue", "Purple", "White", "Gray"]
+	},
+	{
+	"name" : "Augmented",
+	"active" : [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+	"colors" : ["Black", "White", "White", "White", "Red", "White", "White", "White", "Blue", "White", "White", "White"]
+	},
+	{
+	"name" : "none",
+	"active" : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	"colors" : ["Black", "Black", "Black", "Black", "Black", "Black", "Black", "Black", "Black", "Black", "Black", "Black"]
+	}
+];
+
+//array of color objects
+colors =
+[
+	{
+	"name" : "Black",
+	"R" : 0,
+	"G" : 0,
+	"B" : 0,
+	"HTMLcode" : "#DBDBDB"
+	},
+	{
+	"name" : "Red",
+	"R" : 255,
+	"G" : 25,
+	"B" : 25,
+	"HTMLcode" : "#FF5C5C"
+	},
+	{
+	"name" : "Orange",
+	"R" : 255,
+	"G" : 128,
+	"B" : 0,
+	"HTMLcode" : "#FFBF00"
+	},
+	{
+	"name" : "Yellow",
+	"R" : 255,
+	"G" : 245,
+	"B" : 0,
+	"HTMLcode" : "#FFF700"
+	},
+	{
+	"name" : "Green",
+	"R" : 0,
+	"G" : 255,
+	"B" : 0,
+	"HTMLcode" : "#00FF00"
+	},
+	{
+	"name" : "Blue",
+	"R" : 0,
+	"G" : 222,
+	"B" : 255,
+	"HTMLcode" : "#00DEFF"
+	},
+	{
+	"name" : "Purple",
+	"R" : 255,
+	"G" : 50,
+	"B" : 255,
+	"HTMLcode" : "#FF5DFF"
+	},
+	{
+	"name" : "Gray",
+	"R" : 200,
+	"G" : 200,
+	"B" : 200,
+	"HTMLcode" : "#DBDBDB"
+	},
+	{
+	"name" : "White",
+	"R" : 255,
+	"G" : 255,
+	"B" : 255,
+	"HTMLcode" : "#FFFFFF"
+	}
+];

@@ -1,0 +1,157 @@
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<Title>Guitar Neck</Title>
+		<script src = 'libraries/p5.js'></script>
+		<script src = 'libraries/p5.dom.js'></script>	
+		<script src = 'js/string.js'></script>
+		<script src = 'js/fret.js'></script>
+		<script src = 'js/neck.js'></script>
+		<script src = 'js/dat.json'></script>
+		<script src = 'js/guitar neck.js'></script>
+		<script src = 'js/chord box.js'></script>
+		<script src = 'js/global.js'></script>	
+		<link rel="stylesheet" href="guitar neck.css">
+		</head>
+
+	<body onLoad = "printCanvas()">
+	<p id="p1"></p>
+		<div id="buttonDiv">
+			<div id = "tableArea">
+			<select id="tuneSelect" onchange="refreshTuning()"></select>
+			<table id="tuningTable">
+				<tr>
+					<th>Str 1</th>
+					<th>Str 2</th>
+					<th>Str 3</th>
+					<th>Str 4</th>
+					<th>Str 5</th>
+					<th>Str 6</th>
+					<th>Str 7</th>
+					<th>Str 8</th>
+					<th>Str 9</th>
+					<th>Str 10</th>
+					<th>Str 11</th>
+					<th>Str 12</th>
+				</tr>
+				<tr>
+					<td><select id="s0" onchange="stringChange()"></select></td>
+					<td><select id="s1" onchange="stringChange()"></select></td>
+					<td><select id="s2" onchange="stringChange()"></select></td>
+					<td><select id="s3" onchange="stringChange()"></select></td>
+					<td><select id="s4" onchange="stringChange()"></select></td>
+					<td><select id="s5" onchange="stringChange()"></select></td>
+					<td><select id="s6" onchange="stringChange()"></select></td>
+					<td><select id="s7" onchange="stringChange()"></select></td>
+					<td><select id="s8" onchange="stringChange()"></select></td>
+					<td><select id="s9" onchange="stringChange()"></select></td>
+					<td><select id="s10" onchange="stringChange()"></select></td>
+					<td><select id="s11" onchange="stringChange()"></select></td>					
+				</tr>
+			</table>
+			</div>
+			<p>
+			<div id="notesArea">
+				<select id="keySelect"></select>
+				<select id="scaleSelect" onchange="updateScale(this)"></select>
+				<table id="notesTable">
+					<tr>
+						<th id="rc00">Root</th>
+						<th id="rc01">Min2</th>
+						<th id="rc02">Maj2</th>
+						<th id="rc03">Min3</th>
+						<th id="rc04">Maj3</th>
+						<th id="rc05">Perf4</th>
+						<th id="rc06">Flat5</th>
+						<th id="rc07">Perf5</th>
+						<th id="rc08">Min6</th>
+						<th id="rc09">Maj6</th>
+						<th id="rc010">Min7</th>
+						<th id="rc011">Maj7</th>
+					</tr>
+					<tr>
+						<td id="rc10"><p id="n0"></p></td>
+						<td id="rc11"><p id="n1"></p></td>
+						<td id="rc12"><p id="n2"></p></td>
+						<td id="rc13"><p id="n3"></p></td>
+						<td id="rc14"><p id="n4"></p></td>
+						<td id="rc15"><p id="n5"></p></td>
+						<td id="rc16"><p id="n6"></p></td>
+						<td id="rc17"><p id="n7"></p></td>
+						<td id="rc18"><p id="n8"></p></td>
+						<td id="rc19"><p id="n9"></p></td>
+						<td id="rc110"><p id="n10"></p></td>
+						<td id="rc111"><p id="n11"></p></td>
+					</tr>
+					<tr>
+						<td id="rc20"><button id="a0" onclick="updateMarked(this)"></button></td>
+						<td id="rc21"><button id="a1" onclick="updateMarked(this)"></button></td>
+						<td id="rc22"><button id="a2" onclick="updateMarked(this)"></button></td>
+						<td id="rc23"><button id="a3" onclick="updateMarked(this)"></button></td>
+						<td id="rc24"><button id="a4" onclick="updateMarked(this)"></button></td>
+						<td id="rc25"><button id="a5" onclick="updateMarked(this)"></button></td>
+						<td id="rc26"><button id="a6" onclick="updateMarked(this)"></button></td>
+						<td id="rc27"><button id="a7" onclick="updateMarked(this)"></button></td>
+						<td id="rc28"><button id="a8" onclick="updateMarked(this)"></button></td>
+						<td id="rc29"><button id="a9" onclick="updateMarked(this)"></button></td>
+						<td id="rc210"><button id="a10" onclick="updateMarked(this)"></button></td>
+						<td id="rc211"><button id="a11" onclick="updateMarked(this)"></button></td>
+					</tr>
+					<tr>
+						<td id="rc30"><select id="c0" onclick="updateMarked(this)"></select></td>
+						<td id="rc31"><select id="c1" onclick="updateMarked(this)"></select></td>
+						<td id="rc32"><select id="c2" onclick="updateMarked(this)"></select></td>
+						<td id="rc33"><select id="c3" onclick="updateMarked(this)"></select></td>
+						<td id="rc34"><select id="c4" onclick="updateMarked(this)"></select></td>
+						<td id="rc35"><select id="c5" onclick="updateMarked(this)"></select></td>
+						<td id="rc36"><select id="c6" onclick="updateMarked(this)"></select></td>
+						<td id="rc37"><select id="c7" onclick="updateMarked(this)"></select></td>
+						<td id="rc38"><select id="c8" onclick="updateMarked(this)"></select></td>
+						<td id="rc39"><select id="c9" onclick="updateMarked(this)"></select></td>
+						<td id="rc310"><select id="c10" onclick="updateMarked(this)"></select></td>
+						<td id="rc311"><select id="c11" onclick="updateMarked(this)"></select></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<table id="canvasTable">
+			<tr>
+			
+				<td>
+					<table id="canvasAreaTable">
+						<tr>
+							<td id="canvasArea"></td>
+						</tr>
+					</table>
+				</td>
+				
+				<td>
+					<table id="chordBoxTable">
+						<tr>
+							<td id="cb0"></td>
+							<td id="cb1"></td>
+							<td id="cb2"></td>
+							<td id="cb3"></td>
+						</tr>
+						<tr>
+							<td id="cb4"></td>
+							<td id="cb5"></td>
+							<td id="cb6"></td>
+							<td id="cb7"></td>
+						</tr>
+						<tr>
+							<td id="cb8"></td>
+							<td id="cb9"></td>
+							<td id="cb10"></td>
+							<td id="cb11"></td>
+						</tr>
+					</table>
+				</td>
+				
+			</tr>
+		</table>
+	</body>
+	
+</html>
